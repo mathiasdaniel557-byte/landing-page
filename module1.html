@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1 — Web Programming Basics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">&lt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="module1.html" class="active">Module 1</a></li>
+      <li><a href="module2.html">Module 2</a></li>
+      <li><a href="module3.html">Module 3</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero" data-symbol="WWW">
+    <div class="hero-badge">Module 01 &nbsp;·&nbsp; Web Programming</div>
+    <h1>Web Programming Basics</h1>
+    <p>Understanding the Internet, the World Wide Web, and how web applications are built</p>
+  </section>
+
+  <div class="container">
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 1</span>
+        <h2>Definitions of Web Programming, the Internet and WWW</h2>
+      </div>
+
+      <img
+        src="images/The-8-Best-Online-Coding-Courses-of-2021-77ff57d2460349c4b82842afc82d8e4b.jpg"
+        alt="Online coding courses"
+        class="mod-img"
+      />
+
+      <p><strong>Web Programming</strong> refers to the process of writing, testing, and maintaining the code that makes websites and web applications function. It encompasses both the visual front-end that users interact with and the back-end logic that runs on servers.</p>
+
+      <p><strong>The Internet</strong> is a global system of interconnected computer networks that communicate using the Internet Protocol (IP) suite. It is the physical and logical infrastructure — the roads — that data travels on.</p>
+
+      <p><strong>The World Wide Web (WWW)</strong> is a system of interlinked hypertext documents and resources accessed via the Internet through a web browser. The Web is a service that runs on top of the Internet — one of many, alongside email, FTP, and instant messaging.</p>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Key Distinctions</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Concept</th><th>What It Is</th><th>Invented By</th><th>Year</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Internet</strong></td>
+              <td>Global network infrastructure (TCP/IP)</td>
+              <td>DARPA / Vint Cerf &amp; Bob Kahn</td>
+              <td>1969 (ARPANET)</td>
+            </tr>
+            <tr>
+              <td><strong>World Wide Web</strong></td>
+              <td>Hypertext document system on the Internet</td>
+              <td>Tim Berners-Lee</td>
+              <td>1989</td>
+            </tr>
+            <tr>
+              <td><strong>Web Browser</strong></td>
+              <td>Software to access and display web pages</td>
+              <td>Tim Berners-Lee (WorldWideWeb)</td>
+              <td>1990</td>
+            </tr>
+            <tr>
+              <td><strong>Web Programming</strong></td>
+              <td>Writing code for web-based applications</td>
+              <td>Evolving discipline</td>
+              <td>1990s–present</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 2</span>
+        <h2>Internet Services and Communication Protocols</h2>
+      </div>
+
+      <p>The Internet provides a wide range of services beyond the Web. Each service relies on specific <strong>communication protocols</strong> — standardised rules that define how data is sent and received between systems.</p>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1rem 0 0.6rem;">Common Internet Services</h3>
+      <ul>
+        <li><strong>World Wide Web (HTTP/HTTPS)</strong> — browsing hypertext documents and web apps</li>
+        <li><strong>Email (SMTP, POP3, IMAP)</strong> — sending and receiving electronic messages</li>
+        <li><strong>File Transfer (FTP/SFTP)</strong> — uploading and downloading files between systems</li>
+        <li><strong>Domain Name System (DNS)</strong> — translating domain names to IP addresses</li>
+        <li><strong>Instant Messaging &amp; VoIP</strong> — real-time text, voice, and video communication</li>
+        <li><strong>Streaming (RTSP/WebRTC)</strong> — audio and video delivery in real time</li>
+      </ul>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Key Communication Protocols</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Protocol</th><th>Full Name</th><th>Purpose</th><th>Port</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="tag-badge">HTTP</span></td><td>HyperText Transfer Protocol</td><td>Web page requests &amp; responses</td><td>80</td></tr>
+            <tr><td><span class="tag-badge">HTTPS</span></td><td>HTTP Secure</td><td>Encrypted web communication</td><td>443</td></tr>
+            <tr><td><span class="tag-badge">FTP</span></td><td>File Transfer Protocol</td><td>File uploads &amp; downloads</td><td>21</td></tr>
+            <tr><td><span class="tag-badge">SMTP</span></td><td>Simple Mail Transfer Protocol</td><td>Sending email</td><td>25 / 587</td></tr>
+            <tr><td><span class="tag-badge">DNS</span></td><td>Domain Name System</td><td>Domain-to-IP resolution</td><td>53</td></tr>
+            <tr><td><span class="tag-badge">TCP/IP</span></td><td>Transmission Control Protocol / Internet Protocol</td><td>Core data delivery &amp; routing</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 3</span>
+        <h2>Web Application Architecture and the Network Model</h2>
+      </div>
+
+      <p>A <strong>web application</strong> is structured in layers. The most widely used model is the <strong>Three-Tier Architecture</strong>:</p>
+
+      <ol>
+        <li><strong>Presentation Layer (Client/Front-end)</strong> — what the user sees in their browser. Built with HTML, CSS, and JavaScript.</li>
+        <li><strong>Application Layer (Business Logic/Back-end)</strong> — processes user requests and communicates with the database. Built with PHP, Node.js, Python, etc.</li>
+        <li><strong>Data Layer (Database)</strong> — stores and retrieves data. Examples: MySQL, MongoDB, PostgreSQL.</li>
+      </ol>
+
+      <div class="info-box" style="margin-top:1.25rem;">
+        <strong>How a request works:</strong> A user types a URL → browser sends an HTTP request → server processes it → retrieves data from the database → sends an HTTP response back → browser renders the page.
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Client-Side vs Server-Side</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Aspect</th><th>Client-Side</th><th>Server-Side</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Where it runs</td><td>User's browser</td><td>Web server</td></tr>
+            <tr><td>Languages</td><td>HTML, CSS, JavaScript</td><td>PHP, Python, Node.js, Java</td></tr>
+            <tr><td>Speed</td><td>Faster (local execution)</td><td>Depends on server &amp; network</td></tr>
+            <tr><td>Security</td><td>Visible to user (less secure)</td><td>Hidden from user (more secure)</td></tr>
+            <tr><td>Examples</td><td>Form validation, animations</td><td>Login auth, database queries</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 4</span>
+        <h2>Web Development Life Cycle</h2>
+      </div>
+
+      <p>The <strong>Web Development Life Cycle (WDLC)</strong> is a structured process for planning, building, and maintaining a web application.</p>
+
+      <ol>
+        <li><strong>Requirement Gathering &amp; Planning</strong> — Define project goals, target audience, features, timeline, and budget.</li>
+        <li><strong>System Design</strong> — Create wireframes, UI mockups, database schemas, and architecture diagrams.</li>
+        <li><strong>Development</strong> — Write the actual code — front-end (HTML/CSS/JS) and back-end (server &amp; database logic).</li>
+        <li><strong>Testing &amp; Quality Assurance</strong> — Test for bugs, cross-browser compatibility, responsiveness, and security.</li>
+        <li><strong>Deployment</strong> — Upload the web application to a live server and make it accessible to users.</li>
+        <li><strong>Maintenance &amp; Updates</strong> — Monitor performance, fix bugs, add new features, and keep the application secure.</li>
+      </ol>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:1rem;">
+      <a href="module2.html" class="btn">Next: Module 2 — HTML &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Designed &amp; built by <strong>Daniel Mathias Elijah</strong> &nbsp;|&nbsp; <strong>25/CO/IS/007</strong> &nbsp;|&nbsp; Information Systems, University of Uyo</p>
+    <p style="margin-top:0.4rem;">Web Programming Lab Assignment &mdash; 2025/2026 Session &nbsp;&nbsp;<a href="contact.html">Contact Me</a></p>
+  </footer>
+
+</body>
+</html>

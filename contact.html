@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Daniel Mathias Elijah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-brand">&lt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="module1.html">Module 1</a></li>
+      <li><a href="module2.html">Module 2</a></li>
+      <li><a href="module3.html">Module 3</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" data-symbol="@">
+    <div class="hero-badge">Contact &nbsp;·&nbsp; Web Programming Assignment</div>
+    <h1>Get in Touch</h1>
+    <p>Student details and visitor contact form</p>
+  </section>
+
+  <div class="container">
+
+    <!-- STUDENT INFO CARD -->
+    <div class="student-card">
+      <div class="s-avatar">D</div>
+      <div class="s-info">
+        <h2>Daniel Mathias Elijah</h2>
+        <p class="reg">25/CO/IS/007</p>
+        <p class="dept">Department of Information Systems &nbsp;·&nbsp; Faculty of Computing &nbsp;·&nbsp; University of Uyo</p>
+        <p style="color:#64748b;font-size:0.82rem;margin-top:0.5rem;">Web Programming Lab Assignment &mdash; 2025/2026 Academic Session</p>
+      </div>
+    </div>
+
+    <!-- STUDENT DETAILS TABLE -->
+    <div class="unit" style="margin-bottom:2rem;">
+      <div class="unit-header">
+        <span class="unit-badge">Student</span>
+        <h2>My Details</h2>
+      </div>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Field</th><th>Information</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Full Name</strong></td>
+              <td>Daniel Mathias Elijah</td>
+            </tr>
+            <tr>
+              <td><strong>Registration Number</strong></td>
+              <td><span class="tag-badge">25/CO/IS/007</span></td>
+            </tr>
+            <tr>
+              <td><strong>Department</strong></td>
+              <td>Information Systems</td>
+            </tr>
+            <tr>
+              <td><strong>Faculty</strong></td>
+              <td>Faculty of Computing</td>
+            </tr>
+            <tr>
+              <td><strong>Institution</strong></td>
+              <td>University of Uyo, Akwa Ibom State, Nigeria</td>
+            </tr>
+            <tr>
+              <td><strong>Course</strong></td>
+              <td>Web Programming</td>
+            </tr>
+            <tr>
+              <td><strong>Session</strong></td>
+              <td>2025/2026 Academic Session</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="visitor-name">Your Name <span style="color:#ef4444;">*</span></label>
+          <input
+            type="text"
+            id="visitor-name"
+            name="visitor_name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span style="color:#ef4444;">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+234 800 000 0000"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject <span style="color:#ef4444;">*</span></label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="What is your message about?"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Comments <span style="color:#ef4444;">*</span></label>
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Type your message or comments here…"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" onclick="handleSubmit(event)">Send Message</button>
+
+      <p style="text-align:center;color:var(--muted);font-size:0.8rem;margin-top:1rem;">
+        Fields marked <span style="color:#ef4444;">*</span> are required.
+      </p>
+    </div>
+
+    <!-- BACK LINK -->
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="index.html" class="btn" style="background:var(--navy);">&larr; Back to Home</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Designed &amp; built by <strong>Daniel Mathias Elijah</strong> &nbsp;|&nbsp; <strong>25/CO/IS/007</strong> &nbsp;|&nbsp; Information Systems, University of Uyo</p>
+    <p style="margin-top:0.4rem;">Web Programming Lab Assignment &mdash; 2025/2026 Session</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name    = document.getElementById('visitor-name').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const comments= document.getElementById('comments').value.trim();
+
+      if (!name || !phone || !subject || !comments) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      // Success feedback
+      const btn = e.target;
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = '#10b981';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        document.getElementById('visitor-name').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('comments').value = '';
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

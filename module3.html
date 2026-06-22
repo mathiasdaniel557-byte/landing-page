@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 3 — Cascading Style Sheets (CSS)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">&lt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="module1.html">Module 1</a></li>
+      <li><a href="module2.html">Module 2</a></li>
+      <li><a href="module3.html" class="active">Module 3</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero" data-symbol="CSS">
+    <div class="hero-badge">Module 03 &nbsp;·&nbsp; Web Programming</div>
+    <h1>Cascading Style Sheets (CSS)</h1>
+    <p>Bringing life and style to HTML — colors, typography, spacing, and layout control</p>
+  </section>
+
+  <div class="container">
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 1</span>
+        <h2>Basics of CSS</h2>
+      </div>
+
+      <img
+        src="images/cssatrules.png"
+        alt="CSS styling code on a screen"
+        class="mod-img"
+      />
+
+      <p><strong>CSS (Cascading Style Sheets)</strong> is a stylesheet language used to control the visual presentation of HTML elements — things like color, font, spacing, size, and layout. It separates content (HTML) from presentation (CSS), making web pages easier to maintain.</p>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.1rem 0 0.6rem;">CSS Rule Syntax</h3>
+      <p>A CSS rule has a <strong>selector</strong> (which HTML element to style) and a <strong>declaration block</strong> containing property-value pairs.</p>
+
+      <div class="code-block">
+        <pre>
+<span class="hl-cmt">/* selector { property: value; } */</span>
+
+<span class="hl-attr">p</span> {
+  <span class="hl-prop">color</span>: <span class="hl-num">#333333</span>;
+  <span class="hl-prop">font-size</span>: <span class="hl-num">16px</span>;
+  <span class="hl-prop">line-height</span>: <span class="hl-num">1.6</span>;
+}
+
+<span class="hl-attr">h1</span> {
+  <span class="hl-prop">color</span>: <span class="hl-num">navy</span>;
+  <span class="hl-prop">font-family</span>: <span class="hl-val">Arial, sans-serif</span>;
+}
+        </pre>
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.1rem 0 0.6rem;">Types of CSS Selectors</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Selector</th><th>Syntax</th><th>What It Targets</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Element</strong></td>
+              <td><span class="tag-badge">p</span></td>
+              <td>All &lt;p&gt; elements</td>
+              <td>p { color: red; }</td>
+            </tr>
+            <tr>
+              <td><strong>Class</strong></td>
+              <td><span class="tag-badge">.classname</span></td>
+              <td>All elements with that class</td>
+              <td>.card { padding: 1rem; }</td>
+            </tr>
+            <tr>
+              <td><strong>ID</strong></td>
+              <td><span class="tag-badge">#idname</span></td>
+              <td>One unique element by its ID</td>
+              <td>#header { background: navy; }</td>
+            </tr>
+            <tr>
+              <td><strong>Universal</strong></td>
+              <td><span class="tag-badge">*</span></td>
+              <td>Every element on the page</td>
+              <td>* { box-sizing: border-box; }</td>
+            </tr>
+            <tr>
+              <td><strong>Descendant</strong></td>
+              <td><span class="tag-badge">div p</span></td>
+              <td>&lt;p&gt; inside a &lt;div&gt;</td>
+              <td>nav a { color: white; }</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <strong>The "Cascading" in CSS:</strong> When multiple rules target the same element, the browser follows a cascade order — specificity, source order, and the !important keyword determine which rule wins.
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 2</span>
+        <h2>Adding Style to HTML</h2>
+      </div>
+
+      <p>There are three ways to add CSS to an HTML document:</p>
+
+      <ol>
+        <li><strong>Inline CSS</strong> — applied directly to a single element using the style attribute. Highest specificity but hard to maintain.</li>
+        <li><strong>Internal (Embedded) CSS</strong> — written inside a &lt;style&gt; block in the &lt;head&gt;. Good for single-page styling.</li>
+        <li><strong>External CSS</strong> — stored in a separate .css file and linked via &lt;link&gt;. Best practice for multi-page sites.</li>
+      </ol>
+
+      <div class="code-block">
+        <pre>
+<span class="hl-cmt">&lt;!-- 1. Inline CSS --&gt;</span>
+<span class="hl-tag">&lt;p</span> <span class="hl-attr">style</span>=<span class="hl-val">"color: blue; font-size: 18px;"</span><span class="hl-tag">&gt;</span><span class="hl-txt">Styled inline</span><span class="hl-tag">&lt;/p&gt;</span>
+
+<span class="hl-cmt">&lt;!-- 2. Internal CSS (inside head) --&gt;</span>
+<span class="hl-tag">&lt;style&gt;</span>
+  <span class="hl-attr">body</span> { <span class="hl-prop">background-color</span>: <span class="hl-num">#f0f0f0</span>; }
+<span class="hl-tag">&lt;/style&gt;</span>
+
+<span class="hl-cmt">&lt;!-- 3. External CSS (inside head) --&gt;</span>
+<span class="hl-tag">&lt;link</span> <span class="hl-attr">rel</span>=<span class="hl-val">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-val">"style.css"</span> <span class="hl-tag">/&gt;</span>
+        </pre>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Method</th><th>Location</th><th>Scope</th><th>Best For</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Inline</td><td>Inside HTML tag</td><td>Single element</td><td>Quick one-off overrides</td></tr>
+            <tr><td>Internal</td><td>&lt;style&gt; in &lt;head&gt;</td><td>One page</td><td>Single-page projects</td></tr>
+            <tr><td>External</td><td>Separate .css file</td><td>Entire site</td><td>Multi-page websites (recommended)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 3</span>
+        <h2>CSS Text, Font, and Colors</h2>
+      </div>
+
+      <div class="code-block">
+        <pre>
+<span class="hl-attr">p</span> {
+  <span class="hl-prop">font-family</span>:     <span class="hl-val">Arial, Helvetica, sans-serif</span>;
+  <span class="hl-prop">font-size</span>:       <span class="hl-num">16px</span>;
+  <span class="hl-prop">font-weight</span>:     <span class="hl-num">bold</span>;
+  <span class="hl-prop">font-style</span>:      <span class="hl-num">italic</span>;
+  <span class="hl-prop">text-align</span>:      <span class="hl-num">center</span>;
+  <span class="hl-prop">text-decoration</span>: <span class="hl-num">underline</span>;
+  <span class="hl-prop">text-transform</span>:  <span class="hl-num">uppercase</span>;
+  <span class="hl-prop">line-height</span>:     <span class="hl-num">1.6</span>;
+  <span class="hl-prop">letter-spacing</span>:  <span class="hl-num">0.05em</span>;
+}
+        </pre>
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">CSS Colors</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Format</th><th>Example</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Named</strong></td><td>color: navy;</td><td>140+ named colors</td></tr>
+            <tr><td><strong>Hex</strong></td><td>color: #1a56db;</td><td>#RRGGBB — most common in web design</td></tr>
+            <tr><td><strong>RGB</strong></td><td>color: rgb(26, 86, 219);</td><td>Red, Green, Blue (0–255 each)</td></tr>
+            <tr><td><strong>RGBA</strong></td><td>color: rgba(26, 86, 219, 0.5);</td><td>RGB + Alpha (opacity 0.0–1.0)</td></tr>
+            <tr><td><strong>HSL</strong></td><td>color: hsl(220, 78%, 48%);</td><td>Hue, Saturation, Lightness</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Color Swatches</h3>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+        <div style="width:80px;height:60px;background:#0d1b2a;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#0d1b2a</div>
+        <div style="width:80px;height:60px;background:#1a56db;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#1a56db</div>
+        <div style="width:80px;height:60px;background:#06b6d4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#06b6d4</div>
+        <div style="width:80px;height:60px;background:#f59e0b;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#f59e0b</div>
+        <div style="width:80px;height:60px;background:#10b981;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#10b981</div>
+        <div style="width:80px;height:60px;background:#ef4444;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#ffffff;">#ef4444</div>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-header">
+        <span class="unit-badge">Unit 4</span>
+        <h2>CSS Borders, Margin, Padding &amp; Using CSS in HTML</h2>
+      </div>
+
+      <p>These three properties control the <strong>spacing and boundary</strong> of elements. Together they form the <strong>CSS Box Model</strong>.</p>
+
+      <div class="info-box">
+        <strong>The Box Model:</strong> Every HTML element is a rectangular box made up of — from inside out — Content → Padding → Border → Margin.
+      </div>
+
+      <div style="text-align:center;margin:1.5rem 0;padding:1.5rem;background:var(--bg);border-radius:10px;border:1px solid var(--border);">
+        <div style="display:inline-block;background:#fef3c7;border:2px dashed #f59e0b;padding:0.5rem 1.5rem;border-radius:4px;font-size:0.8rem;color:#92400e;">
+          <span style="font-family:'JetBrains Mono',monospace;">Margin</span>
+          <div style="background:#d1fae5;border:2px solid #10b981;padding:0.5rem 1.5rem;margin:0.5rem 0;border-radius:4px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#065f46;">Border</span>
+            <div style="background:#dbeafe;padding:0.5rem 1.5rem;margin:0.5rem 0;border-radius:4px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#1e40af;">Padding</span>
+              <div style="background:#ffffff;padding:0.5rem 1.5rem;border:1px solid #93c5fd;border-radius:4px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#1e293b;">Content</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre>
+<span class="hl-attr">.box</span> {
+  <span class="hl-prop">border</span>:        <span class="hl-num">2px solid #1a56db</span>;
+  <span class="hl-prop">border-radius</span>: <span class="hl-num">8px</span>;
+  <span class="hl-prop">padding</span>:       <span class="hl-num">1rem 2rem</span>;
+  <span class="hl-prop">margin</span>:        <span class="hl-num">1rem auto</span>;
+  <span class="hl-prop">width</span>:         <span class="hl-num">100%</span>;
+  <span class="hl-prop">max-width</span>:     <span class="hl-num">800px</span>;
+}
+        </pre>
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Border Styles Reference</h3>
+      <div class="tbl-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Property</th><th>Values</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>border-style</strong></td><td>solid, dashed, dotted, double, none</td><td>border-style: dashed;</td></tr>
+            <tr><td><strong>border-width</strong></td><td>px, em, thin, medium, thick</td><td>border-width: 2px;</td></tr>
+            <tr><td><strong>border-color</strong></td><td>Any CSS color value</td><td>border-color: #06b6d4;</td></tr>
+            <tr><td><strong>border-radius</strong></td><td>px, %, em</td><td>border-radius: 50%;</td></tr>
+            <tr><td><strong>border</strong></td><td>Shorthand for all three</td><td>border: 1px solid navy;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:'Poppins',sans-serif;color:var(--navy);margin:1.25rem 0 0.6rem;">Margin &amp; Padding Shorthand</h3>
+      <ul>
+        <li><strong>margin: 10px</strong> — all four sides equal</li>
+        <li><strong>margin: 10px 20px</strong> — top/bottom | left/right</li>
+        <li><strong>margin: 10px 20px 30px</strong> — top | left/right | bottom</li>
+        <li><strong>margin: 10px 20px 30px 40px</strong> — top | right | bottom | left (clockwise)</li>
+      </ul>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:0.75rem;">
+      <a href="module2.html" class="btn" style="background:var(--navy);">&larr; Module 2: HTML</a>
+      <a href="contact.html" class="btn">Contact Page &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Designed &amp; built by <strong>Daniel Mathias Elijah</strong> &nbsp;|&nbsp; <strong>25/CO/IS/007</strong> &nbsp;|&nbsp; Information Systems, University of Uyo</p>
+    <p style="margin-top:0.4rem;">Web Programming Lab Assignment &mdash; 2025/2026 Session &nbsp;&nbsp;<a href="contact.html">Contact Me</a></p>
+  </footer>
+
+</body>
+</html>
